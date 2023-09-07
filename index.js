@@ -16,7 +16,7 @@ const prompts = [
 
     },
     {
-        type: 'checkbox',
+        type: 'list',
         message: 'What shape will the logo be?',
         name: 'shape',
         choices: ['circle', 'triangle', 'square'],

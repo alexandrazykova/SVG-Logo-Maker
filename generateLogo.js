@@ -1,7 +1,7 @@
-const Shape = require('./lib/shapes')
+const {Circle, Triangle, Square} = require('./lib/shapes')
 
 function generateLogo(data) {
-    let shape = ''
+    let shape
     if (data.shape === 'Circle') {
         shape = new Circle(data.shape_colour, data.text, data.text_colour)
     } else if (data.shape === 'Triangle') {
