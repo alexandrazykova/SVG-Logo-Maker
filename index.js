@@ -29,7 +29,7 @@ const prompts = [
 ];
 
 function writeToFile(fileName, data) {
-    var content = generateLogo(data);
+    let content = generateLogo(data);
     fs.writeFile(fileName, content, function (err) {
         if (err) {
             return console.log(error);
@@ -39,11 +39,18 @@ function writeToFile(fileName, data) {
 }
 
 // function to initialize app
-function init() {
-    inquirer.prompt(prompts).then(function (data) {
-        var fileName = 'logo.svg';
-        writeToFile(fileName, data);
-    });
+// function init() {
+//     inquirer.prompt(prompts).then(function (data) {
+//         let fileName = 'logo.svg';
+//         writeToFile(fileName, data);
+//     });
+// }
+// function to initialize app
+
+
+async function init() {
+    const data = await inquirer.prompt(prompts)
+        writeToFile('logo.svg', data);
 }
 
 // Function call to initialize app

@@ -1,15 +1,20 @@
-const {Circle, Triangle, Square} = require('./lib/shapes')
+const { Circle, Triangle, Square } = require('./lib/shapes')
 
-function generateLogo(data) {
-    let shape
-    if (data.shape === 'Circle') {
-        shape = new Circle(data.shape_colour, data.text, data.text_colour)
-    } else if (data.shape === 'Triangle') {
-        shape = new Triangle(data.shape_colour, data.text, data.text_colour)
-    } else if (data.shape === 'Square') {
-        shape = new Square(data.shape_colour, data.text, data.text_colour)
+function generateLogo({ shape, shape_colour, text, text_colour }) {
+    let finalShape
+
+    switch (shape) {
+        case 'Circle':
+            finalShape = new Circle(shape_colour, text, text_colour);
+            break;
+        case 'Triangle':
+            finalShape = new Triangle(shape_colour, text, text_colour);
+            break;
+        case 'Square':
+            finalShape = new Square(shape_colour, text, text_colour)
     }
-    return shape.render();
-}
     
+    return finalShape.render();
+}
+
 module.exports = generateLogo;
