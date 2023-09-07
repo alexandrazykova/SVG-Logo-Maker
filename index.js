@@ -7,7 +7,7 @@ const prompts = [
     {
         type: 'input',
         message: 'Enter up to 3 characters for your logo',
-        name: 'characters',
+        name: 'text',
     },
     {
         type: 'input',
@@ -19,7 +19,7 @@ const prompts = [
         type: 'list',
         message: 'What shape will the logo be?',
         name: 'shape',
-        choices: ['circle', 'triangle', 'square'],
+        choices: ['Circle', 'Triangle', 'Square'],
     },
     {
         type: 'input',
