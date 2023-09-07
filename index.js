@@ -1,9 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const SVG = require('svg.js');
-const generateLogo = require('../index');
+const generateLogo = require('/generateLogo');
 
-const colorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/i;
 
 const prompts = [
     {
@@ -14,7 +12,7 @@ const prompts = [
     {
         type: 'input',
         message: 'What colour will the text be?',
-        name: 'textCol',
+        name: 'text_colour',
         
     },
     {
@@ -26,13 +24,13 @@ const prompts = [
     {
       type: 'input',
       message: 'What colour will the shape be?',
-      name: 'shapeCol',
+      name: 'shape_colour',
   }
 ];
 
-const writeToFile = (fileName, data) => {
+function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
-        err ? console.log(err) : console.log(data)
+        err ? console.log(err) : console.log('Generated logo.svg')
     );
 }
 
@@ -40,10 +38,9 @@ const writeToFile = (fileName, data) => {
 function init() { 
     inquirer.prompt(prompts).then((response) => {
         console.log(response)
-
-        // function to write README file
-        writeToFile("index.js", generateLogo(response))
-    })
+        var fileName = 'logo.svg';
+        writeToFile(fileName, data);
+    });
 }
 
 // Function call to initialize app
