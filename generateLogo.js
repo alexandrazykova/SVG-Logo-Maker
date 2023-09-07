@@ -1,7 +1,7 @@
 const Shape = require('./lib/shapes')
 
 function generateLogo(data) {
-    let shape = undefined
+    let shape = ''
     if (data.shape === 'Circle') {
         shape = new Circle(data.shape_colour, data.text, data.text_colour)
     } else if (data.shape === 'Triangle') {
@@ -11,6 +11,5 @@ function generateLogo(data) {
     }
     return shape.render();
 }
-    
     
 module.exports = generateLogo;

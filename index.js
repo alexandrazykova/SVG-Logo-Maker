@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateLogo = require('/generateLogo');
+const generateLogo = require('./generateLogo');
 
 
 const prompts = [
@@ -13,7 +13,7 @@ const prompts = [
         type: 'input',
         message: 'What colour will the text be?',
         name: 'text_colour',
-        
+
     },
     {
         type: 'checkbox',
@@ -22,22 +22,25 @@ const prompts = [
         choices: ['circle', 'triangle', 'square'],
     },
     {
-      type: 'input',
-      message: 'What colour will the shape be?',
-      name: 'shape_colour',
-  }
+        type: 'input',
+        message: 'What colour will the shape be?',
+        name: 'shape_colour',
+    }
 ];
 
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
-        err ? console.log(err) : console.log('Generated logo.svg')
-    );
+    var content = generateLogo(data);
+    fs.writeFile(fileName, content, function (err) {
+        if (err) {
+            return console.log(error);
+        }
+        console.log('Generated logo.svg');
+    });
 }
 
 // function to initialize app
-function init() { 
-    inquirer.prompt(prompts).then((response) => {
-        console.log(response)
+function init() {
+    inquirer.prompt(prompts).then(function (data) {
         var fileName = 'logo.svg';
         writeToFile(fileName, data);
     });
