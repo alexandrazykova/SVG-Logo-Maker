@@ -32,8 +32,7 @@ Your logo is now ready for use in your projects. You can open logo.svg in a web 
 
 ## Demo
 
-Walk through video (https://drive.google.com/file/d/1YYqsqCM05_YQL0Z_ZLbaEGjNjcvW0gcb/view?usp=sharing)
- 
+Walk through video (https://drive.google.com/file/d/1YYqsqCM05_YQL0Z_ZLbaEGjNjcvW0gcb/view?usp=sharing) 
 ## Examples
 
 ![screenshot](examples/ex_logo.svg.png)
